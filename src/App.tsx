@@ -9,6 +9,9 @@ import { Pricing } from './pages/pricing';
 import { Signup } from './pages/signup';
 import { TryRoom } from './pages/try-room';
 import { Helmet } from 'react-helmet'; // Importing Helmet for managing the document head
+import { Toaster } from './components/ui/toaster';
+import { ForgotPassword } from './pages/forgot-password';
+import { ResetPassword } from './pages/reset-password';
 
 function App() {
   return (
@@ -27,11 +30,15 @@ function App() {
             <Route path="/pricing" element={<Pricing />} />
             <Route path="/try-room" element={<TryRoom />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/forgot-password" element={<ForgotPassword />} />
+            <Route path="/reset-password" element={<ResetPassword />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
           </Routes>
         </main>
         <Footer />
+        <Toaster /> {/* ✅ Add Toaster just before closing div */}
+
       </div>
     </BrowserRouter>
   );
